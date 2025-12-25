@@ -1,0 +1,39 @@
+require('dotenv').config();
+
+module.exports = {
+  //Enter your session id here (optional)
+  SESSION_ID: process.env.SESSION_ID || 'JUNE-MD:~eyJub2lzZUtleSI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoidUx1SjB1ZDdvZW9wbGFzSW0yVWlXZnFyR0IyMlNETzVQcU5VWjRMdzRFWT0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiUjBoeTNucG1FYjVpV0pvdkp1NGE4ZW5xRE8rcVZ1WVoyUmVVV2prTlZYOD0ifX0sInBhaXJpbmdFcGhlbWVyYWxLZXlQYWlyIjp7InByaXZhdGUiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJxTm4wdjZZanRzS2RMN2dNOTVmWU05R3ovclJTN2VNd1RBOUNWVFphdFY4PSJ9LCJwdWJsaWMiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJ0V3Yxd25EQUpoVzNwblBMdlJDVi9Xdk5YOWplN2s1akpuemlEWitmWWpjPSJ9fSwic2lnbmVkSWRlbnRpdHlLZXkiOnsicHJpdmF0ZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IkNDWWRUbUhmWUZ0QzhhYmNUK1FtQUQ0aTdoNTV2b0J6alJaUmNVcThuWGM9In0sInB1YmxpYyI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6ImZQWm1wbkhrMHdOR2pWQWNoUWdOQm1pbWprdnhwcHR1by9BeEw0WDdCeEU9In19LCJzaWduZWRQcmVLZXkiOnsia2V5UGFpciI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoibUZKZUFRL09rRDhhRlZqUnBWVTlLeUVnZE54cGdMZCt4T0ZyMDdQY1lGWT0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiVldvRzlHVEcxVC84Nldlc2EraHIrb21BRU9DbitwVFk5MVgyN0U2ZzJrcz0ifX0sInNpZ25hdHVyZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IjVCVFd2cHo4a29vZUNhMkdxSnRGMGV5TE9hcVNUTldCWWtFV2lRTHdxV2lyaSs0WE1JbHl0c3I2Y0o4VlNUUjR0Umo5T3BrU3Y5TW5KSVYyaEdNTERBPT0ifSwia2V5SWQiOjF9LCJyZWdpc3RyYXRpb25JZCI6MjIzLCJhZHZTZWNyZXRLZXkiOiIvaDFYcG44YTlKdnB5QXhLTURobk9RRkU4eDVFUmJvZndkbkV3SUFCSiswPSIsInByb2Nlc3NlZEhpc3RvcnlNZXNzYWdlcyI6W3sia2V5Ijp7InJlbW90ZUppZCI6IjI1NDc5NDY0ODY2M0BzLndoYXRzYXBwLm5ldCIsImZyb21NZSI6dHJ1ZSwiaWQiOiJBQzQxMjNDNERDNzg3NDlGNjQ5QkRBMjQ4RDI2MTc1RCJ9LCJtZXNzYWdlVGltZXN0YW1wIjoxNzY2NjQ5ODE4fSx7ImtleSI6eyJyZW1vdGVKaWQiOiIyNTQ3OTQ2NDg2NjNAcy53aGF0c2FwcC5uZXQiLCJmcm9tTWUiOnRydWUsImlkIjoiQUM3RjMwRDcwMThDMjBFOTk0QUQwQ0NFODBGM0E1MDAifSwibWVzc2FnZVRpbWVzdGFtcCI6MTc2NjY0OTgxOH1dLCJuZXh0UHJlS2V5SWQiOjgxMywiZmlyc3RVbnVwbG9hZGVkUHJlS2V5SWQiOjgxMywiYWNjb3VudFN5bmNDb3VudGVyIjoyLCJhY2NvdW50U2V0dGluZ3MiOnsidW5hcmNoaXZlQ2hhdHMiOmZhbHNlfSwicmVnaXN0ZXJlZCI6dHJ1ZSwicGFpcmluZ0NvZGUiOiJZVVBSQURFViIsIm1lIjp7ImlkIjoiMjU0Nzk0NjQ4NjYzOjIzQHMud2hhdHNhcHAubmV0IiwibGlkIjoiNDgzMTAzOTYxNjIyMTE6MjNAbGlkIiwibmFtZSI6IkNvbGxpbnMuY29sbG8ifSwiYWNjb3VudCI6eyJkZXRhaWxzIjoiQ0lLUDFlSUNFTWZmczhvR0dBUWdBQ2dBIiwiYWNjb3VudFNpZ25hdHVyZUtleSI6InVvWXVyYVhXR3VNZUIyV0JZc2VwclpvOERJS0VJRS9uYk5EU2Ntckx4Q2s9IiwiYWNjb3VudFNpZ25hdHVyZSI6IkhTcXJtRFlJV0RLbENBSXZUbmZKQ1RNcVF2ZTBORHVHanZ4RVJZZWh4Ym1mZlJ6clFDbTlyU3Exc2dhMDUzSW94NkM1ckxXOXp1bEtvT0VKQkMweURnPT0iLCJkZXZpY2VTaWduYXR1cmUiOiJsWG9PS2toaWdKYkluSmVHelJsRkRCcWsrRGRIMnlnWXFKd3pjdmtSYzFrTC8vWVV4SU55cGRZa2VQL0hqbWpQODFjTkVsK3puV0hmVE84TlJLamNDZz09In0sInNpZ25hbElkZW50aXRpZXMiOlt7ImlkZW50aWZpZXIiOnsibmFtZSI6IjI1NDc5NDY0ODY2MzoyM0BzLndoYXRzYXBwLm5ldCIsImRldmljZUlkIjowfSwiaWRlbnRpZmllcktleSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IkJicUdMcTJsMWhyakhnZGxnV0xIcWEyYVBBeUNoQ0JQNTJ6UTBuSnF5OFFwIn19XSwicGxhdGZvcm0iOiJhbmRyb2lkIiwicm91dGluZ0luZm8iOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJDQTBJQlFnSSJ9LCJsYXN0QWNjb3VudFN5bmNUaW1lc3RhbXAiOjE3NjY2NDk4MTMsImxhc3RQcm9wSGFzaCI6IjFLNGhINCIsIm15QXBwU3RhdGVLZXlJZCI6IkFBQUFBTEdCIn0=',
+  
+  //Enter your number here for administrative access to the bot
+  BOT_ADMIN: process.env.BOT_ADMIN || '254794648663',
+  
+  //Bot web server port
+  PORT: parseInt(process.env.PORT) || 2605,
+  
+  //Enter your Github username here (Compulsory unless you have a valid premium key)
+  GITHUB_USERNAME: process.env.GITHUB_USERNAME || 'jethro-tech-dot',
+  
+  //Enter your desired bot password here. Users will be asked for this password when they try to connect to your bot via telegram or web
+  //Must be numbers only and a total of 8 digits
+  BOT_PASSWORD: parseInt(process.env.BOT_PASSWORD) || 12345678,
+  
+  //Enter the desired password for accessing administrative access to the bot 
+  //⚠️ Do not share with anyone as they can use it to control your bot
+   //Must be numbers only and a total of 8 digits
+  ADMIN_PASSWORD: parseInt(process.env.BOT_PASSWORD) || 11223344,
+  
+  //Enter telegram bot token for interaction with this bot via telegram (optional)
+  TELEGRAM_BOT_TOKEN: process.env.TELEGRAM_BOT_TOKEN || '',
+  
+   //Antidelete and Antiedit functionality, set true to enable and false to disable. (⚠️ This function consumes a lot of memory + storage, only enable if you have enough resources ⚠️)
+   ANTI_DELETE: process.env.ANTI_DELETE || 'true',
+  
+  
+  //⚠️ Premium users settings ⚠️
+   PREMIUM_KEY: process.env.PREMIUM_KEY || '',
+   MAX_SESSIONS: parseInt(process.env.MAX_SESSIONS) || 3,
+   EXPIRY: process.env.EXPIRY || ''
+};
+
+// You must set GITHUB_USERNAME to use the bot unless you are a premium user
+// You must fork JUNE-MD repo in order to use the bot unless you're a premium user
